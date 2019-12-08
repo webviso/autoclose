@@ -1,13 +1,14 @@
 {
-  "name": "autoclose",
-  "main": "./lib/autoclose",
-  "version": "0.0.2",
-  "description": "close html-like tag in all file.",
+  "name": "autoclose-patched",
+  "main": "./lib/autoclose-patched",
+  "version": "0.0.3",
+  "description": "close HTML-like tags in all files.",
   "keywords": [
     "atom",
-    "autoclose"
+    "autoclose",
+    "autoclose-patched"
   ],
-  "repository": "https://github.com/awaw00/autoclose",
+  "repository": "https://github.com/javaskript/autoclose-patched",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
