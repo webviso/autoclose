@@ -14,7 +14,7 @@ module.exports =
 
   activate: ->
     @subscriptions = new CompositeDisposable
-    atom.config.observe 'autoclose.disabledFileExtensions', (value) =>
+    atom.config.observe 'autoclose-patched.disabledFileExtensions', (value) =>
       @disabledFileExtensions = value
 
     @currentEditor = atom.workspace.getActiveTextEditor()
