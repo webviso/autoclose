@@ -1,5 +1,5 @@
 # autoclose
-Auto close html-like tag.
+Auto close HTML-like tags. The updated, patched version of the original (abandoned) autoclose.
 
 ## capabilities
   * when type `<a>` will get `<a></a>`
