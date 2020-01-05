@@ -14,7 +14,7 @@ module.exports =
 
   activate: ->
     @subscriptions = new CompositeDisposable
-    atom.config.observe 'autoclose-patched.disabledFileExtensions', (value) =>
+    atom.config.observe 'autoclose.disabledFileExtensions', (value) =>
       @disabledFileExtensions = value
 
     @currentEditor = atom.workspace.getActiveTextEditor()
@@ -77,15 +77,18 @@ module.exports =
     if previousTagIndex < 0
       return
 
-    tagName = strBefore.match(/^.*\<([a-zA-Z0-9-_.]+)[^>]*?/)?[1]
-    if !tagName then return
+    tagName = strBefore.match(/^.*\<([a-zA-Z0-9-_]+)[^>]*?/)?[1]
+    if (tagName == 'br' | tagName == 'hr' | tagName == 'meta' | tagName == 'link' | tagName == 'input' | tagName == 'iframe' | tagName == 'img' | tagName == 'col' | tagName == 'source')
+      return
+    else
+      if !tagName then return
 
-    if text is '>'
-      if strBefore[strBefore.length - 1] is '/'
-        return
+      if text is '>'
+        if strBefore[strBefore.length - 1] is '/'
+          return
 
-      @currentEditor.insertText "</#{tagName}>"
-      @currentEditor.moveLeft tagName.length + 3
-    else if text is '/'
-      if strAfter[0] is '>' then return
-      @currentEditor.insertText '>'
+        @currentEditor.insertText "</#{tagName}>"
+        @currentEditor.moveLeft tagName.length + 3
+      else if text is '/'
+        if strAfter[0] is '>' then return
+        @currentEditor.insertText '>'
