@@ -1,5 +1,5 @@
 # autoclose
-Atom code editor extension: closeHTML tags automatically. The updated, patched version of the original (abandoned) autoclose.
+Atom code editor extension: close HTML tags automatically. The updated, patched version of the original (abandoned) autoclose.
 
 ## Demonstration
 <img src="https://raw.githubusercontent.com/webviso/autoclose/master/example.gif"/>
