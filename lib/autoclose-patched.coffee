@@ -78,7 +78,7 @@ module.exports =
       return
 
     tagName = strBefore.match(/^.*\<([a-zA-Z0-9-_]+)[^>]*?/)?[1]
-    if (tagName == 'br' | tagName == 'hr' | tagName == 'meta' | tagName == 'link' | tagName == 'input' | tagName == 'iframe' | tagName == 'img' | tagName == 'col' | tagName == 'source')
+    if (tagName == 'br' | tagName == 'hr' | tagName == 'meta' | tagName == 'link' | tagName == 'input' | tagName == 'iframe' | tagName == 'img' | tagName == 'col' | tagName == 'source' | tagName == 'embed')
       return
     else
       if !tagName then return
